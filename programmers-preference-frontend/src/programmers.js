@@ -9,7 +9,7 @@ const programmers =[
         id: 2,
         name: 'John Carmack',
         age: 49,
-        enjoys: "Space stuff",
+        enjoys: "Space stuff"
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const programmers =[
         id: 4,
         name: 'Dennis Ritchie',
         age: 0,
-        enjoys: "being dead",
+        enjoys: "being dead"
     },
     {
         id: 5,

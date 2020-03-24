@@ -4,12 +4,11 @@ import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } fro
 class ProgrammersIndex extends Component {
 
 render(){
-  
+  console.log(this.props.programmers)
   
 return(
   <>
-{ this.props.programmers.map((programmer, index) => {
-  console.log(programmer)
+  {this.props.programmers.map((programmer, index) => {
   return(
     <ListGroup key={ index }>
       <h4>{ programmer.name }</h4>
