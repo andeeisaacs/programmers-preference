@@ -12,6 +12,7 @@ it('ProgrammersIndex renders without crashing', () => {
 })
 
 it('ProgrammersIndex renders content', () => {
-  const ProgrammersIndex = mount(<ProgrammersIndex />)
-  expect(ProgrammersIndex.find('p').text()).toEqual('All the programmers.')
+  const component = mount(<ProgrammersIndex programmers={ programmers }/>)
+  const headings = component.find('h4')
+  expect(headings.length).toBe(7)
 })

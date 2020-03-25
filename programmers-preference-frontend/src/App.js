@@ -17,7 +17,7 @@ class App extends Component {
     console.log(this.state.allProgrammers)
   return (
     <>
-    {/* <Header /> */}
+    <Header />
       <Router>
         <Switch>
           {/* <Route exact path="/programmer/:id" component={ ProgrammersShow } /> */}

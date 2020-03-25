@@ -4,7 +4,7 @@ import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } fro
 class ProgrammersIndex extends Component {
 
 render(){
-  console.log(this.props.programmers)
+
   
 return(
   <>
