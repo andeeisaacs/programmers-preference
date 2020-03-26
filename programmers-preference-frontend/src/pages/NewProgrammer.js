@@ -17,6 +17,14 @@ constructor(props){
     form[event.target.name] = event.target.value
     this.setState({ form: form })
 }
+
+
+   handleClick = (e) => {
+    e.preventDefault();
+    {/* Change this code out below to change/submit to our json package */}
+    console.log(this.state.form.name, this.state.form.age, this.state.form.enjoys);
+  }
+  
     render(){
         
     return (
@@ -45,7 +53,7 @@ constructor(props){
                 value={ this.state.form.enjoys }
             />
         </FormGroup>
-        <Button>Submit</Button>
+        <Button onClick={ this.handleClick }>Submit</Button>
         </Form>
         </>
         )
