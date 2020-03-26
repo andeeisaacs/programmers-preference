@@ -22,9 +22,9 @@ const Header = (props) => {
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Select a link below</DropdownItem>
-            <DropdownItem>See all Programmers</DropdownItem>
+            <DropdownItem href="/">See all Programmers</DropdownItem>
             <DropdownItem divider />
-            <DropdownItem>Create a programmer</DropdownItem>
+            <DropdownItem href="/newprogrammer">Create a programmer</DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </Nav>

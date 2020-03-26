@@ -21,7 +21,6 @@ class App extends Component {
     <Header />
       
       <Router>
-        <Link to="/newprogrammer">New Programmer Creation</Link>
         <Switch>
           <Route exact path="/programmer/:id" render={ (props) => <ProgrammersShow { ...props } programmers={ this.state.allProgrammers } /> } />
           <Route exact path="/" render={ (props) => <ProgrammersIndex programmers={ this.state.allProgrammers } /> } />
