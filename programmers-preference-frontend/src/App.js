@@ -40,7 +40,7 @@ class App extends Component {
       },
       method: "POST"
     })
-    .then((reponse) => {
+    .then((response) => {
       if(response.ok) {
         return this.getProgrammers()
       }
@@ -54,7 +54,7 @@ class App extends Component {
       
       <Router>
         <Switch>
-          <Route exact path="/newprogrammer" render={ (props) => <NewProgrammer handleSubmit={ this.createCat } /> } />
+          <Route exact path="/newprogrammer" render={ (props) => <NewProgrammer handleSubmit={ this.createProgrammer } /> } />
           <Route exact path="/programmer/:id" render={ (props) => <ProgrammersShow { ...props } programmers={ this.state.allProgrammers } /> } />
           <Route exact path="/" render={ (props) => <ProgrammersIndex programmers={ this.state.allProgrammers } /> } />
         </Switch>

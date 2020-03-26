@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 class NewProgrammer extends Component {
 constructor(props){
@@ -57,12 +58,12 @@ constructor(props){
                 value={ this.state.form.enjoys }
             />
         </FormGroup>
-        <Link to="/programmersindex">
-        <Button
-        name="submit"
-        id="submit"
-        onClick={ this.handleSubmit }>Create new profile!</Button>
-        {this.state.success && <Redirect to="./programmersindex"/>
+        <Link to="/">
+          <Button
+             name="submit"
+             id="submit"
+             onClick={ this.handleSubmit }>Create new profile!</Button>
+        {this.state.success && <Redirect to="./"/>}
         </Link>
         </Form>
         </>
