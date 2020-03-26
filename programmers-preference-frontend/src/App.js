@@ -11,11 +11,30 @@ class App extends Component {
   constructor () {
     super()
     this.state= {
-      allProgrammers: programmers
+      allProgrammers: [],
     }  
+    this.getProgrammers()
   }
+  
+  componentWillMount(){
+    this.getProgrammers()
+  }
+
+  getProgrammers = () => {
+    fetch("http://localhost:3000/programmers")
+    .then((response)=>{
+      if(response.status === 200){
+        return(response.json())
+      }
+    })
+    .then((programmersArray)=>{
+      this.setState({ allProgrammers: programmersArray })
+    })
+    }
+  
  
   render() {
+    console.log(this.state.allProgrammers)
   return (
     <>
     <Header />
