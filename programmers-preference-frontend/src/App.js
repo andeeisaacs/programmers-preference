@@ -32,18 +32,31 @@ class App extends Component {
     })
     }
   
+  createProgrammer = (newprogrammer) => {
+    return fetch("http://localhost:3000/programmers", {
+      body: JSON.stringify(newprogrammer),
+      headers: {
+          "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then((reponse) => {
+      if(response.ok) {
+        return this.getProgrammers()
+      }
+    })
+  }
  
   render() {
-    console.log(this.state.allProgrammers)
   return (
     <>
     <Header />
       
       <Router>
         <Switch>
+          <Route exact path="/newprogrammer" render={ (props) => <NewProgrammer handleSubmit={ this.createCat } /> } />
           <Route exact path="/programmer/:id" render={ (props) => <ProgrammersShow { ...props } programmers={ this.state.allProgrammers } /> } />
           <Route exact path="/" render={ (props) => <ProgrammersIndex programmers={ this.state.allProgrammers } /> } />
-          <Route exact path="/newprogrammer" component={NewProgrammer} />
         </Switch>
       </Router>  
     </>

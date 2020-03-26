@@ -5,6 +5,7 @@ class NewProgrammer extends Component {
 constructor(props){
   super(props)
   this.state = {
+    success: false,
     form:{
       name: '',
       age: '',
@@ -12,18 +13,21 @@ constructor(props){
     }
   }
 }
+
+
+   handleSubmit = (event) => {
+       event.preventDefault()
+       this.props.handleSubmit(this.state.form)
+       this.setState({
+           success:true
+       })
+   }
+   
     handleChange = (event) => {
-     let { form } = this.state
-    form[event.target.name] = event.target.value
-    this.setState({ form: form })
-}
-
-
-   handleClick = (e) => {
-    e.preventDefault();
-    {/* Change this code out below to change/submit to our json package */}
-    console.log(this.state.form.name, this.state.form.age, this.state.form.enjoys);
-  }
+        let { form } = this.state
+        form[event.target.name] = event.target.value
+        this.setState({ form: form })
+    }
   
     render(){
         
@@ -53,7 +57,13 @@ constructor(props){
                 value={ this.state.form.enjoys }
             />
         </FormGroup>
-        <Button onClick={ this.handleClick }>Submit</Button>
+        <Link to="/programmersindex">
+        <Button
+        name="submit"
+        id="submit"
+        onClick={ this.handleSubmit }>Create new profile!</Button>
+        {this.state.success && <Redirect to="./programmersindex"/>
+        </Link>
         </Form>
         </>
         )
