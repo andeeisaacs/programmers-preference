@@ -13,12 +13,12 @@ const Header = (props) => {
       <Jumbotron fluid>
         <Container fluid>
           <h1 className="display-3">Programmers Preference</h1>
-          <p className="lead">Tinder, but for dope programmers</p>
+          <p className="lead">#1 place for programmer's to find their preference!</p>
         </Container>
          <Nav>
        <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle nav caret>
-            Dropdown
+            Menu
           </DropdownToggle>
           <DropdownMenu>
             <DropdownItem header>Select a link below</DropdownItem>

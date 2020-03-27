@@ -11,8 +11,6 @@ return(
             <h3> { programmers.name } </h3>
             <p> { programmers.age } </p>
             <p> { programmers.enjoys } </p>
-            <Button>DELETE PROGRAMMER</Button>
-            {/* Need link and functionality*/}
         </>    
     )
 }

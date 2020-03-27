@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText } from 'reactstrap';
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Card, Button, CardHeader, CardFooter, CardBody, CardTitle, CardText  } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import ProgrammersShow from "../pages/ProgrammersShow";
 
@@ -14,12 +14,16 @@ return(
   <Router>
   {this.props.programmers.map((programmer, index) => {
   return(
-    <ListGroup key={ index }>
+    
+    <Card key={ index }>
     <Link to ={`/programmer/${programmer.id}`}>
-      <h4>{ programmer.name }</h4>
+      <CardHeader>{ programmer.name }</CardHeader>
       </Link>
-      <small>{ programmer.age } - { programmer.enjoys }</small>
-    </ListGroup>
+      <CardBody>
+       <CardTitle>{ programmer.age } </CardTitle> 
+       <CardText>{ programmer.enjoys }</CardText>
+      </CardBody>
+    </Card>
     )
   })}
     <Route exact path="/programmer/:id" render={ (props) => <ProgrammersShow { ...props } programmers={ this.props.programmers } /> } />

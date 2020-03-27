@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, FormText, Card, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 class NewProgrammer extends Component {
@@ -34,6 +34,8 @@ constructor(props){
         
     return (
         <>
+        <Card>
+        <CardBody>
         <Form>
         <FormGroup>
           <Label htmlFor="name" id="name">Name</Label>
@@ -63,9 +65,12 @@ constructor(props){
              name="submit"
              id="submit"
              onClick={ this.handleSubmit }>Create new profile!</Button>
-        {this.state.success && <Redirect to="./"/>}
+             {this.state.success && <Redirect to="./"/>}
         </Link>
         </Form>
+        </CardBody> 
+        </Card>
+        
         </>
         )
 }

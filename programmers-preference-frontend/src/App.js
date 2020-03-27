@@ -51,7 +51,6 @@ class App extends Component {
   return (
     <>
     <Header />
-      
       <Router>
         <Switch>
           <Route exact path="/newprogrammer" render={ (props) => <NewProgrammer handleSubmit={ this.createProgrammer } /> } />
